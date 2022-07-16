@@ -1,0 +1,44 @@
+#app-wrapper {
+  text-align: center;
+  width: min(100% - 2rem, 960px);
+  margin-inline: auto;
+  margin-top: 25px;
+}
+
+#add-todo {
+  height: 1.5rem;
+}
+
+#submit-button {
+  background-color: aqua;
+  border: none;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+
+#edit-todo {
+  height: 1.5rem;
+}
+
+#save-button {
+  background-color: orangered;
+  border: none;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+
+#edit-box {
+  display: none;
+}
+
+#edit-button {
+}
+
+#delete-button {
+}
+
+input[type="submit"],
+button,
+[aria-label] {
+  cursor: pointer;
+}

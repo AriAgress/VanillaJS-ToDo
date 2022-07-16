@@ -1,1 +1,1 @@
-# VanillaJS-ToDo
+# VanillaJS-ToDo Practice

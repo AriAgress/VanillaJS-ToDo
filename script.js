@@ -20,12 +20,25 @@ var app = new (function () {
           '<td><button onclick="app.Delete(' +
           i +
           ')" id="edit-button">Delete</button></td>';
+        data += "</tr>";
       }
     }
+    //call count function to give it a count
+    this.Count(this.tasks.length);
+    //return our element(el) into our html
+    return (this.el.innerHTML = data);
   };
 
   //add
-  this.Add = function () {};
+  this.Add = function () {
+    el = document.getElementById("add-todo");
+    //after grabbing add-todo element, we can now grab the value inside the input
+    var task = el.value;
+    if (task) {
+      //trim removes white space from the string
+      this.tasks.push(task.trim());
+    }
+  };
 
   //update
   this.Edit = function (item) {};

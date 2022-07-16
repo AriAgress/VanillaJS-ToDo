@@ -42,7 +42,7 @@ var app = new (function () {
     if (task) {
       //trim removes white space from the string
       this.tasks.push(task.trim());
-      el.value = "";
+      this.el.value = "";
       this.FetchAll();
     }
   };
@@ -73,7 +73,19 @@ var app = new (function () {
   };
 
   //count
-  this.Count = function (data) {};
+  this.Count = function (data) {
+    var el = document.getElementById("counter");
+    var name = "Tasks";
+    if (data) {
+      if (data === 1) {
+        name = "Task";
+      }
+      //data is count we are putting in
+      el.innerHTML = data + " " + name;
+    } else {
+      el.innerHTML = "No " + name;
+    }
+  };
 })();
 
 app.FetchAll();

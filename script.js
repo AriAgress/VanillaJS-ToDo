@@ -5,6 +5,7 @@ var app = new (function () {
   this.tasks = [];
 
   //Read
+  //FetchAll will refresh the todo list
   this.FetchAll = function () {
     //create empty variable "data". Which is what is going to be displayed in the line item.
     var data = "";
@@ -52,10 +53,24 @@ var app = new (function () {
     el.value = this.tasks[item];
     document.getElementById("edit-box").style.display = "block";
     self = this;
+
+    document.getElementById("save-edit").onsubmit = function () {
+      var task = el.value;
+
+      if (task) {
+        self.tasks.splice(item, 1, task.trim());
+        self.FetchAll();
+        //close the box
+        CloseInput();
+      }
+    };
   };
 
   //delete
-  this.Delete = function (item) {};
+  this.Delete = function (item) {
+    this.tasks.splice(item, 1);
+    this.FetchAll();
+  };
 
   //count
   this.Count = function (data) {};

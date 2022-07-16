@@ -32,9 +32,19 @@
 }
 
 #edit-button {
+  background-color: gold;
+  border: none;
+  border-radius: 10%;
+  margin: 0.3rem;
+  padding: 0.2rem;
 }
 
 #delete-button {
+  background-color: red;
+  border: none;
+  border-radius: 10%;
+  margin: 0.3rem;
+  padding: 0.2rem;
 }
 
 input[type="submit"],

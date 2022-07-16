@@ -6,11 +6,15 @@ var app = new (function () {
 
   //Read
   this.FetchAll = function () {
+    //create empty variable "data". Which is what is going to be displayed in the line item.
     var data = "";
 
+    //We only want to display line items in table if there are items in the todo list. So we use a conditional. (this.tasks.length is the array)
     if (this.tasks.length > 0) {
       for (i = 0; i < this.tasks.length; i++) {
         data += "<tr>";
+        //(i + 1) is the count before the list data
+        //this.tasks[i] is the data
         data += "<td>" + (i + 1) + ". " + this.tasks[i] + "</td>";
         data +=
           '<td><button onclick="app.Edit(' +
@@ -19,7 +23,7 @@ var app = new (function () {
         data +=
           '<td><button onclick="app.Delete(' +
           i +
-          ')" id="edit-button">Delete</button></td>';
+          ')" id="delete-button">Delete</button></td>';
         data += "</tr>";
       }
     }
@@ -43,7 +47,12 @@ var app = new (function () {
   };
 
   //update
-  this.Edit = function (item) {};
+  this.Edit = function (item) {
+    el = document.getElementById("edit-todo");
+    el.value = this.tasks[item];
+    document.getElementById("edit-box").style.display = "block";
+    self = this;
+  };
 
   //delete
   this.Delete = function (item) {};

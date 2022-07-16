@@ -11,7 +11,7 @@ var app = new (function () {
     if (this.tasks.length > 0) {
       for (i = 0; i < this.tasks.length; i++) {
         data += "<tr>";
-        data += "<td>" + (i + 1) + ". " + this.task[i] + "</td>";
+        data += "<td>" + (i + 1) + ". " + this.tasks[i] + "</td>";
         data +=
           '<td><button onclick="app.Edit(' +
           i +
@@ -37,6 +37,8 @@ var app = new (function () {
     if (task) {
       //trim removes white space from the string
       this.tasks.push(task.trim());
+      el.value = "";
+      this.FetchAll();
     }
   };
 
